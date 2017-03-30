@@ -39,7 +39,8 @@ sourceSets {
 }
 
 ext {
-    springBootVersion = '1.4.0.RELEASE'
+    springBootVersion = '1.5.1.RELEASE'
+    cassandraUnit = '2.1.9.2'
 }
 
 allprojects{
@@ -54,14 +55,37 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: springBootVersion
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion
+    compile group: 'org.springframework.data', name: 'spring-data-cassandra', version: springBootVersion
+    compile (group: 'org.cassandraunit', name: 'cassandra-unit-spring', version: cassandraUnit){
+        exclude group: 'org.cassandraunit', module: 'cassandra-unit'
+    }
+    compile (group: 'org.cassandraunit', name: 'cassandra-unit', version: cassandraUnit){
+        exclude group: 'org.apache.cassandra', module: 'cassandra-all'
+    }
+
+    compile group: 'org.apache.cassandra', name: 'cassandra-all', version: '2.1.9'
+
+//    compile group: 'org.cassandraunit', name: 'cassandra-unit-spring', version: '2.2.2.1'
+
+//    compile group: 'org.cassandraunit', name: 'cassandra-unit-spring', version: '3.0.0.1'
+
+
+
 
 //    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.2.8'
 //    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.34'
     compile group: 'com.h2database', name: 'h2', version: '1.4.192'
 
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion
+//    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+//    compile group: 'org.apache.cassandra', name: 'cassandra-all', version: '3.10'
+//    compile group: 'org.cassandraunit', name: 'cassandra-unit', version: '3.1.3.2'
+
+
+
 
 
 }
