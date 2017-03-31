@@ -1,0 +1,2 @@
+-- Test sql
+-- INSERT INTO x (id) VALUES (now())
