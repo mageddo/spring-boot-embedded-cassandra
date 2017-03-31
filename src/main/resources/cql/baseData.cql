@@ -1,2 +1,2 @@
 -- Test sql
- INSERT INTO x2 (id) VALUES (now())
+ CREATE TABLE x2 (id UUID, PRIMARY KEY(id) )
