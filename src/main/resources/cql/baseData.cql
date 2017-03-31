@@ -1,2 +1,2 @@
 -- Test sql
--- INSERT INTO x (id) VALUES (now())
+ INSERT INTO x2 (id) VALUES (now())

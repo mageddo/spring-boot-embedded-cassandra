@@ -58,4 +58,17 @@ public class InboundDocumentCassandraDaoTest {
         Assert.assertEquals(id, results.get(0).toString());
     }
 
+    @Test
+    public void createInsertSelectTest3() throws Exception {
+
+        final String id = "4d7d6cb4-ae80-4c0a-81fe-f92ad5496424";
+        template.execute("INSERT INTO x2 (id) VALUES (" + id + ") ");
+        final List<UUID> results = template.query("SELECT * FROM x", (item, n) -> {
+            return item.get(0, UUID.class);
+        });
+
+        Assert.assertEquals(1, results.size());
+        Assert.assertEquals(id, results.get(0).toString());
+    }
+
 }
