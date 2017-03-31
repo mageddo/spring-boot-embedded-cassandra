@@ -23,7 +23,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { CassandraConfig.class })
 @EmbeddedCassandra(timeout = 60000  )
-@CassandraDataSet(value = {}, keyspace = "idoc")
+@CassandraDataSet(value = {"cql/baseData.cql"}, keyspace = "idoc")
 @TestExecutionListeners(listeners = {  CassandraUnitDependencyInjectionTestExecutionListener.class,  DependencyInjectionTestExecutionListener.class  })
 @DependsOn("cassandraConfig")
 public class InboundDocumentCassandraDaoTest {
