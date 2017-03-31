@@ -18,7 +18,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { CassandraConfig.class })
-@EmbeddedCassandra(timeout = 60000 )
+@EmbeddedCassandra(timeout = 120000 )
 @TestExecutionListeners(listeners = {
     CassandraUnitDependencyInjectionTestExecutionListener.class, DependencyInjectionTestExecutionListener.class
 })
@@ -63,7 +63,7 @@ public class InboundDocumentCassandraDaoTest {
 
         final String id = "4d7d6cb4-ae80-4c0a-81fe-f92ad5496424";
         template.execute("INSERT INTO x2 (id) VALUES (" + id + ") ");
-        final List<UUID> results = template.query("SELECT * FROM x", (item, n) -> {
+        final List<UUID> results = template.query("SELECT * FROM x2", (item, n) -> {
             return item.get(0, UUID.class);
         });
 
