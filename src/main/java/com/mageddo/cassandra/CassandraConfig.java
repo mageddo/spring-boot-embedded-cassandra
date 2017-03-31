@@ -1,7 +1,5 @@
 package com.mageddo.cassandra;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.CassandraClusterFactoryBean;
@@ -22,21 +20,12 @@ import org.springframework.data.cassandra.mapping.CassandraMappingContext;
 @Configuration
 public class CassandraConfig {
 
-
-    @PostConstruct
-    public void init(){
-        System.out.println("ok");
-    }
-
     @Bean
     public CassandraClusterFactoryBean cluster() {
 
         CassandraClusterFactoryBean cluster = new CassandraClusterFactoryBean();
         cluster.setContactPoints("127.0.0.1");
         cluster.setPort(Integer.parseInt("9142"));
-//        cluster.ke
-//        cluster.setPassword("admin");
-//        cluster.setUsername("admin");
 
         return cluster;
     }
