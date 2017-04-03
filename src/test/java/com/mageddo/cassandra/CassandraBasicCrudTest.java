@@ -3,6 +3,7 @@ package com.mageddo.cassandra;
 import java.util.List;
 import java.util.UUID;
 
+import org.cassandraunit.spring.CassandraDataSet;
 import org.cassandraunit.spring.CassandraUnitDependencyInjectionTestExecutionListener;
 import org.cassandraunit.spring.EmbeddedCassandra;
 import org.junit.Assert;
@@ -21,7 +22,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 @TestExecutionListeners(listeners = {
     CassandraUnitDependencyInjectionTestExecutionListener.class, DependencyInjectionTestExecutionListener.class
 })
-//@CassandraDataSet(value = {"cql/baseData.cql"}, keyspace = "idoc")
+@CassandraDataSet(value = {"cql/baseData.cql"}, keyspace = "idoc")
 public class CassandraBasicCrudTest {
 
     @Autowired
