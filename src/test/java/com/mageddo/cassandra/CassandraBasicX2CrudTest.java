@@ -3,6 +3,7 @@ package com.mageddo.cassandra;
 import java.util.List;
 import java.util.UUID;
 
+import com.mageddo.CassandraConfig;
 import org.cassandraunit.spring.CassandraDataSet;
 import org.cassandraunit.spring.CassandraUnitDependencyInjectionTestExecutionListener;
 import org.cassandraunit.spring.EmbeddedCassandra;

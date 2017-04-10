@@ -1,4 +1,4 @@
-package com.mageddo.cassandra;
+package com.mageddo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
