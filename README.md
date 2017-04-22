@@ -1,4 +1,1 @@
-# Testing 
-
-    $ ./gradlew clean build bootRun
-    # access contact list page: http://localhost:9092/customer/Josh    
+This is a didact sample, the necessary code to create a embedded cassandra and integrate it with cucumber or spring test is here but is not ready to play
